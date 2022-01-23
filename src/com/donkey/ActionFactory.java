@@ -1,7 +1,7 @@
 package com.donkey;
 
 public class ActionFactory {
-    private ActionFactory() {};
+    private ActionFactory() {}
     private static ActionFactory actionfactory=new ActionFactory();
 
     public static ActionFactory getInstance() {
@@ -22,6 +22,9 @@ public class ActionFactory {
         }
         else if(command.equals("to_write_list")) {
             action=new BoardtoWriteAction();
+        }
+        else if(command.equals("view_board")) {
+            action=new BoardViewAction();
         }
        return action;
     }

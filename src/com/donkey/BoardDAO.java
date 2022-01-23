@@ -70,4 +70,35 @@ public class BoardDAO {
             DBManager.close(conn, pstmt);
         }
     }
+
+    public BoardBean viewBoard(int id) {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+
+        try {
+            conn=DBManager.getConnection();
+            String sql="select * from tb_writing where id=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            rs= pstmt.executeQuery();
+
+            if(rs.next()) {
+                BoardBean boardBean=new BoardBean();
+                boardBean.setId(rs.getInt(1));
+                boardBean.setNickname(rs.getString(2));
+                boardBean.setPw(rs.getString(3));
+                boardBean.setTitle(rs.getString(4));
+                boardBean.setDescription(rs.getString(5));
+                boardBean.setDate(rs.getString(6));
+                return boardBean;
+            }
+            return null;
+        }catch(Exception e){
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt);
+        }
+        return null;
+    }
 }

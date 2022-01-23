@@ -23,7 +23,7 @@ public class BoardSelectAction implements Action{
         List<BoardBean> list=boarddao.getList(start, 10);
         request.setAttribute("list", list);
 
-        RequestDispatcher dispathcer=request.getRequestDispatcher(url);
-        dispathcer.forward(request, response);
+        RequestDispatcher dispatcher=request.getRequestDispatcher(url);
+        dispatcher.forward(request, response);
     }
 }

@@ -1,11 +1,5 @@
 <%@ page import="com.donkey.*" %>
-<%@ page import="java.util.*" %><%--
-  Created by IntelliJ IDEA.
-  User: YoonmiKim
-  Date: 2022-01-21
-  Time: 오후 9:58
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.*" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     List<BoardBean> list=(List<BoardBean>)request.getAttribute("list");
@@ -32,7 +26,7 @@
 %>
             <tr>
                 <td><%=i+1%></td>
-                <td><%=list.get(i).getTitle()%></td>
+                <td><a href="BoardServlet?command=view_board&id=<%=list.get(i).getId()%>"><%=list.get(i).getTitle()%></a></td>
                 <td><%=list.get(i).getNickname()%></td>
                 <td><%=list.get(i).getDate().substring(2, 16)%></td>
             </tr>
