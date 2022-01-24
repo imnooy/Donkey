@@ -26,6 +26,18 @@ public class ActionFactory {
         else if(command.equals("view_board")) {
             action=new BoardViewAction();
         }
+        else if(command.equals("board_checkPw")) {
+            action=new BoardCheckPwAction();
+        }
+        else if(command.equals("to_update_board")) {
+            action=new BoardUpdateFormAction();
+        }
+        else if(command.equals("update_board")) {
+            action=new BoardUpdateAction();
+        }
+        else if(command.equals("delete_board")) {
+            action=new BoardDeleteAction();
+        }
        return action;
     }
 }

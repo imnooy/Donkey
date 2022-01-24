@@ -101,4 +101,71 @@ public class BoardDAO {
         }
         return null;
     }
+
+    public boolean checkPw(int id, String pw) {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        boolean isRight=false;
+
+        try {
+            conn=DBManager.getConnection();
+            String sql="select pw from tb_writing where id=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            rs=pstmt.executeQuery();
+
+            while(rs.next()) {
+                if(pw.equals(rs.getString("pw"))) {
+                    isRight=true;
+                } else {
+                    isRight=false;
+                }
+            }
+            return isRight;
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            DBManager.close(conn, pstmt);
+        }
+        return false;
+    }
+
+    public void updateBoard(BoardBean boardBean) {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+
+        try {
+            conn=DBManager.getConnection();
+            String sql="update tb_writing set nickname=?, pw=?, title=?, description=? where id=?";
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setString(1, boardBean.getNickname());
+            pstmt.setString(2, boardBean.getPw());
+            pstmt.setString(3, boardBean.getTitle());
+            pstmt.setString(4, boardBean.getDescription());
+            pstmt.setInt(5, boardBean.getId());
+            pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
+
+    public void deleteBoard(int id) {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+
+        try{
+            String sql="delete from tb_writing where id=?";
+            conn=DBManager.getConnection();
+            pstmt=conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            pstmt.executeUpdate();
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn, pstmt);
+        }
+    }
 }
