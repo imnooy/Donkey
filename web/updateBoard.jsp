@@ -6,9 +6,13 @@
 %>
 <html>
 <head>
+    <link rel="stylesheet" href="/css/style.css">
     <title>Donkey</title>
 </head>
 <body>
+<center>
+    <div><a href="BoardServlet?command=view_list"><img src="/img/ear.png" style="width: 200px; height: 150px;"></a></div>
+</center>
 <div class="update_form">
     <h2>구덩이 파기</h2>
     <form method="post" action="BoardServlet">
@@ -16,11 +20,11 @@
         <input type="hidden" value="update_board" name="command">
         <table>
             <tr>
-                <th>구덩이</th>
+                <th>구덩이 이름</th>
                 <td><input type="text" name="title" value="<%=board.getTitle()%>"></td>
             </tr>
             <tr>
-                <th>갓장이 이름</th>
+                <th>글쓴 갓장이</th>
                 <td><input type="text" name="nickname" value="<%=board.getNickname()%>"></td>
             </tr>
             <tr>

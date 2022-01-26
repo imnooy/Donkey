@@ -1,9 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="/css/style.css">
     <title>Donkey</title>
 </head>
 <body>
+<center>
+    <div><a href="BoardServlet?command=view_list"><img src="/img/ear.png" style="width: 200px; height: 150px;"></a></div>
+</center>
 <div class="write_form">
     <h2>구덩이 파기</h2>
     <form method="post" action="BoardServlet">

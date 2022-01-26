@@ -6,15 +6,19 @@
 %>
 <html>
 <head>
+    <link rel="stylesheet" href="/css/style.css">
     <title>Donkey</title>
 </head>
 <body>
+<center>
+    <div><a href="BoardServlet?command=view_list"><img src="/img/ear.png" style="width: 200px; height: 150px;"></a></div>
 <div class="board_list">
     <h2>구덩이들</h2>
-    <table>
-        <tr>
-            <td><a href="BoardServlet?command=to_write_list">구덩이 파기</a></td>
-        </tr>
+    <div>
+    <div style="text-align: right; margin-right: 100px; margin-bottom: 30px;">
+        <a href="BoardServlet?command=to_write_list"><img src="/img/hole.png" style="width: 100px; height: 80px;"></a></td>
+    </div>
+     <table>
         <tr>
             <th>NO</th>
             <th>구덩이</th>
@@ -33,7 +37,9 @@
 <%
         }
 %>
-    </table>
+        </table>
+    </div>
 </div>
+</center>
 </body>
 </html>

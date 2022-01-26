@@ -1,0 +1,124 @@
+@font-face {
+    font-family: 'NanumSquareB';
+    src: url('../font/nanum_square/NanumSquareB.ttf') format('truetype');
+}
+a { text-decoration:none !important }
+body {
+    font-family: NanumSquareB;
+    align-items: center;
+    text-align: center;
+}
+
+input::placeholder {
+    font-family: NanumSquareB;
+}
+
+textarea {
+    resize: none;
+    width: 1000px;
+    height: 270px;
+    font-family: NanumSquareB;
+}
+
+/*index.jsp*/
+
+.main{
+    text-align: center;
+}
+
+.main a h2{
+    color:#fff;
+    -webkit-animation: fadeOut 2s 1s infinite linear alternate;
+    -moz-animation: fadeOut 2s 1s infinite linear alternate;
+    -ms-animation: fadeOut 2s 1s infinite linear alternate;
+    -o-animation: fadeOut 2s 1s infinite linear alternate;
+    animation: fadeOut 2s 1s infinite linear alternate;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-moz-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-ms-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@-o-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/*boardList.jsp*/
+
+.board_list table {
+    border: 10px solid darkolivegreen;
+    padding: 20px;
+}
+
+.board_list table th, .board_list table td {
+    padding: 30px;
+}
+
+/*viewBoard.jsp*/
+
+.view_Board {
+    margin:50px;
+    border: 10px solid darkolivegreen;
+    padding: 20px;
+}
+
+input[type=submit], input[type=button] {
+    width: 50px;
+    height: 30px;
+    color: white;
+    background-color: darkolivegreen;
+    border-radius: 5px;
+}
+
+#pw_txt {
+    height: 30px;
+    border: 2px solid darkolivegreen;
+    border-radius: 5px;
+}
+
+/*updateBoard.jsp*/
+
+.update_form th, .update_form td, .write_form th, .write_form td {
+    padding: 10px;
+}

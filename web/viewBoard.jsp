@@ -6,36 +6,28 @@
 %>
 <html>
 <head>
+    <link rel="stylesheet" href="/css/style.css">
     <title>Donkey</title>
 </head>
 <body>
+<center>
+    <div><a href="BoardServlet?command=view_list"><img src="/img/ear.png" style="width: 200px; height: 150px;"></a></div>
+</center>
     <div class="view_Board">
-        <h2>구덩이 파보기</h2>
-        <form action="BoardServlet" method="post">
+        <h2 style="text-align: left;"><%=board.getTitle()%></h2>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <span>글쓴 갓장이: <%=board.getNickname()%>  |  <%=board.getDate().substring(2, 16)%></span>
+        </div>
+        <form action="BoardServlet" method="post" style="text-align: right">
             <input type="hidden" name="command" value="board_checkPw"/>
             <input type="hidden" name="id" value="<%=board.getId()%>"/>
-            <input type="password" name="input_pw" placeholder="암호"/>
+            <input type="password" name="input_pw" id="pw_txt" placeholder="암호"/>
             <input type="submit" name="act" value="수정"/>
             <input type="submit" name="act" value="삭제"/>
         </form>
-        <table>
-            <tr>
-                <th>구덩이</th>
-                <td><%=board.getTitle()%></td>
-            </tr>
-            <tr>
-                <th>갓장이</th>
-                <td><%=board.getNickname()%></td>
-            </tr>
-            <tr>
-                <th>일시</th>
-                <td><%=board.getDate().substring(2, 16)%></td>
-            </tr>
-            <tr>
-                <th>소리</th>
-                <td><%=board.getDescription()%></td>
-            </tr>
-        </table>
+        <div style="text-align: left;">
+            <%=board.getDescription()%>
+        </div>
     </div>
 </body>
 </html>
