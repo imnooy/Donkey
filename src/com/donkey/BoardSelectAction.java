@@ -14,12 +14,15 @@ public class BoardSelectAction implements Action{
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url="/boardList.jsp";
+        BoardDAO boarddao=BoardDAO.getInstance();
+        int totalCnt=boarddao.listCnt();
+        request.setAttribute("totalCnt", totalCnt);
 
-        int start=0;
+        int start=1;
         String strStart=request.getParameter("start");
         if(strStart!=null) start=Integer.parseInt(strStart);
+        start=(start-1)*10;
 
-        BoardDAO boarddao=BoardDAO.getInstance();
         List<BoardBean> list=boarddao.getList(start, 10);
         request.setAttribute("list", list);
 

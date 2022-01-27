@@ -168,4 +168,26 @@ public class BoardDAO {
             DBManager.close(conn, pstmt);
         }
     }
+
+    public int listCnt() {
+        Connection conn=null;
+        PreparedStatement pstmt=null;
+        ResultSet rs=null;
+        int result=0;
+
+        try{
+            String sql="select count(*) from tb_writing";
+            conn=DBManager.getConnection();
+            pstmt=conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            if(rs.next()){
+                result = rs.getInt(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            DBManager.close(conn, pstmt);
+        }
+        return result;
+    }
 }

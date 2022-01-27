@@ -3,6 +3,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
     List<BoardBean> list=(List<BoardBean>)request.getAttribute("list");
+    int totalCnt=(Integer) request.getAttribute("totalCnt");
+
+    int start=1;
+    String strStart=request.getParameter("start");
+    if(strStart!=null) start=Integer.parseInt(strStart);
+
+    int pageCnt=totalCnt/10+1;
 %>
 <html>
 <head>
@@ -29,7 +36,7 @@
         for(int i=0; i<list.size(); i++) {
 %>
             <tr>
-                <td><%=i+1%></td>
+                <td><%=((start-1)*10)+i+1%></td>
                 <td><a href="BoardServlet?command=view_board&id=<%=list.get(i).getId()%>"><%=list.get(i).getTitle()%></a></td>
                 <td><%=list.get(i).getNickname()%></td>
                 <td><%=list.get(i).getDate().substring(2, 16)%></td>
@@ -38,6 +45,14 @@
         }
 %>
         </table>
+        <br/>
+<%
+    for(int i=1; i<=pageCnt; i++) {
+%>
+        <a href="BoardServlet?command=view_list&start=<%=i%>">[<%=i%>]</a>
+<%
+    }
+%>
     </div>
 </div>
 </center>
