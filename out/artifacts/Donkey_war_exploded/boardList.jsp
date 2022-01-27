@@ -23,7 +23,7 @@
     <h2>구덩이들</h2>
     <div>
     <div style="text-align: right; margin-right: 100px; margin-bottom: 30px;">
-        <a href="BoardServlet?command=to_write_list"><img src="/img/hole.png" style="width: 100px; height: 80px;"></a></td>
+        <a href="BoardServlet?command=to_write_list"><img src="/img/scream.png" style="width: 100px; height: 80px;"></a></td>
     </div>
      <table>
         <tr>

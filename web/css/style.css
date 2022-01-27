@@ -89,10 +89,11 @@ textarea {
 .board_list table {
     border: 10px solid darkolivegreen;
     padding: 20px;
+    font-size: 1.5em;
 }
 
 .board_list table th, .board_list table td {
-    padding: 30px;
+    padding: 10px;
 }
 
 /*viewBoard.jsp*/
