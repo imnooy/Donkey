@@ -16,13 +16,28 @@
                 document.getElementById("u_title").focus();
                 return false;
             }
+            if (document.getElementById("u_title").value.length>30) {
+                alert('제목은 최대 30자까지 가능합니다.');
+                document.getElementById("u_title").focus();
+                return false;
+            }
             if (document.getElementById("u_nickname").value == null || document.getElementById("u_nickname").value == '') {
                 alert('글쓴이의 이름을 입력해주세요.');
                 document.getElementById("u_nickname").focus();
                 return false;
             }
+            if (document.getElementById("u_nickname").value.length>30) {
+                alert('글쓴이의 이름은 최대 30자까지 가능합니다.');
+                document.getElementById("u_nickname").focus();
+                return false;
+            }
             if (document.getElementById("u_pw").value == null || document.getElementById("u_pw").value == '') {
                 alert('암호를 입력해주세요.');
+                document.getElementById("u_pw").focus();
+                return false;
+            }
+            if (document.getElementById("u_pw").value.length>30) {
+                alert('암호는 최대 30자까지 가능합니다.');
                 document.getElementById("u_pw").focus();
                 return false;
             }
