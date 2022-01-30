@@ -76,3 +76,12 @@
 <img src="https://img.shields.io/badge/IntelliJ-000000?style=for-the-badge&logo=IntelliJ IDEA&logoColor=white">  
 
 <img src="https://img.shields.io/badge/apache tomcat-F8DC75?style=for-the-badge&logo=apachetomcat&logoColor=white">   (ver. 7.0.76)
+
+
+---
+
+<br>
+
+## More..
+
++ 게시판 페이지가 10페이지를 넘어갔을 때 'next' 기능
