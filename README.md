@@ -22,39 +22,6 @@
 
 ---
 
-## 각 페이지
-
-<br>
-
-![Honeycam 2022-01-27 23-17-03](https://user-images.githubusercontent.com/75800620/151391543-2ffc4e53-2690-4f04-a664-9bccdf2bb22f.gif)
-메인 페이지 (index.jsp)
-
-<br>
-
-![image](https://user-images.githubusercontent.com/75800620/151391612-c172181a-0e72-4739-a252-4162969f0775.png)
-게시판 페이지 (boardList.jsp)  
-(index.jsp의 깜박거리는 "대나무 숲" 글씨를 클릭하면 이동합니다.)
-
-<br>
-
-![image](https://user-images.githubusercontent.com/75800620/151391639-133d587f-6a9b-4021-9de1-bec0bf6570b6.png)
-글 상세보기 페이지 (viewBoard.jsp)
-
-<br>
-
-![image](https://user-images.githubusercontent.com/75800620/151391663-5296b336-7d95-41c9-b497-5d0996609145.png)
-새 글 쓰기 페이지 (writeBoard.jsp)  
-(index.jsp의 확성기 그림을 누르면 이동합니다.)
-
-<br>
-
-![image](https://user-images.githubusercontent.com/75800620/151391690-6ae70105-1e1a-48af-bea0-daade6cce69c.png)
-글 수정 페이지 (updateBoard.jsp)
-
-<br>
-
----
-
 ## DB 테이블
 
 <br>
